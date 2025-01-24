@@ -1,0 +1,3 @@
+In SQL, a common but easily overlooked error is incorrect handling of NULL values.  Many functions and operators behave unexpectedly when encountering NULLs, leading to incorrect results or unexpected program flow. For example,  using the `=` operator to compare a column to NULL always results in false, even if the column is NULL. The correct approach is to use `IS NULL` or `IS NOT NULL`.
+
+Another example involves aggregate functions. If a column contains NULL values, aggregate functions like `AVG`, `SUM`, or `COUNT` will often ignore those NULLs. This is not always the desired behaviour, and requires explicit handling using functions like `COALESCE` or `ISNULL` to replace NULLs with a meaningful value before aggregation.
